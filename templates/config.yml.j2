@@ -1,0 +1,25 @@
+version: 0.1
+log:
+  fields:
+    service: docker-registry
+storage:
+    cache:
+      blobdescriptor: inmemory
+    s3:
+      accesskey: {{ registry_s3_accesskey }}
+      secretkey: {{ registry_s3_secretkey }}
+      region: {{ registry_s3_region }}
+      bucket: {{ registry_s3_bucket }}
+      secure: true
+      v4auth: true
+
+http:
+    addr: 0.0.0.0:5000
+    secret: {{ registry_http_secret }}
+    headers:
+      X-Content-Type-Options: [nosniff]
+health:
+  storagedriver:
+    enabled: true
+    interval: 10s
+    threshold: 3
