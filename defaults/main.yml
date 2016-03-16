@@ -10,7 +10,6 @@ registry_s3_secretkey: mysecretkey
 
 # Docker configuration
 docker_registry_image: registry:2
-docker_registry_http_port:
 docker_registry_env:
   SEARCH_BACKEND: sqlalchemy
 
@@ -20,8 +19,9 @@ docker_registry_host_conf_file: "/etc/registry/config.yml"
 docker_registry_container_conf_file: "/etc/docker/registry/config.yml"
 docker_registry_command: ""
 docker_registry_expose:
+  - 5000
+docker_registry_ports:
   - 5000:5000
-docker_registry_ports: "{{ docker_registry_expose }}"
 docker_registry_directory_volumes: []
 docker_registry_file_volumes:
   - "{{ docker_registry_host_conf_file }}:{{ docker_registry_container_conf_file }}:ro"
