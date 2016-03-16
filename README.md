@@ -42,8 +42,8 @@ role.
 
 Additional References
 ---------------------
-- [default docker image](https://hub.docker.com/_/registry/)
-
+- [Default docker image](https://hub.docker.com/_/registry/)
+- [Tutorial: deploying a registry server](https://docs.docker.com/registry/deploying/)
 
 License
 -------
