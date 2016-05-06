@@ -31,6 +31,17 @@
     - install
     - upgrade
 
+
+- name: Remove existing {{ docker_registry_name }} container
+  docker:
+    docker_api_version: "{{ docker_api_version }}"
+    image: "{{ docker_registry_image }}"
+    name: "{{ docker_registry_name }}"
+    state: absent
+  tags:
+    - install
+    - upgrade
+
 - name: Run docker registry container
   docker:
     docker_api_version: "{{ docker_api_version }}"
