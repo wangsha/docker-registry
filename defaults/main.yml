@@ -30,7 +30,7 @@ docker_registry_volumes: "{{ docker_registry_directory_volumes + docker_registry
 docker_registry_log_driver: syslog
 docker_registry_log_opt:
   syslog-facility: local0
-  syslog-tag: "{{ docker_registry_name }}"
+  tag: "{{ docker_registry_name }}"
 docker_registry_memory_limit: 512MB
 docker_registry_net: default
 docker_registry_links: []
